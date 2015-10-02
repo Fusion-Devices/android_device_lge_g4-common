@@ -1,10 +1,5 @@
 #!/bin/bash
 
-set -e
-
-export VENDOR=htc
-export DEVICE=hima-common
-
 function extract() {
     for FILE in `egrep -v '(^#|^$)' $1`; do
         OLDIFS=$IFS IFS=":" PARSING_ARRAY=($FILE) IFS=$OLDIFS
@@ -51,13 +46,13 @@ else
   fi
 fi
 
-BASE=../../../vendor/$VENDOR/$DEVICE/proprietary
+BASE=../../../vendor/$VENDOR/g4-common/proprietary
 rm -rf $BASE/*
 
-#DEVBASE=../../../vendor/$VENDOR/$DEVICE/proprietary
-#rm -rf $DEVBASE/*
+DEVBASE=../../../vendor/$VENDOR/$DEVICE/proprietary
+rm -rf $DEVBASE/*
 
-extract ../../$VENDOR/$DEVICE/proprietary-files.txt $BASE
-#extract ../../$VENDOR/$DEVICE/proprietary-files.txt $DEVBASE
+extract ../../$VENDOR/g4-common/proprietary-files.txt $BASE
+extract ../../$VENDOR/$DEVICE/proprietary-files.txt $DEVBASE
 
 ./setup-makefiles.sh

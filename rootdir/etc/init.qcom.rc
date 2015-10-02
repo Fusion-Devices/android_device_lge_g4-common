@@ -98,172 +98,6 @@ on init
     symlink /storage/usbdisk /usbdisk
     symlink /storage/usbdisk /mnt/usbdisk
 
-    # HTC SSD Peripheral UI - BEGIN
-    # LSM330 Gyro
-    chown system system /sys/devices/virtual/ST_gyr/gyr/enable_device
-    chown system system /sys/devices/virtual/ST_gyr/gyr/pollrate_ms
-    chown system system /sys/devices/virtual/ST_gyr/gyr/fifo_mode
-    chown system system /sys/devices/virtual/ST_gyr/gyr/range
-    chown system system /sys/devices/virtual/ST_gyr/gyr/fifo_samples
-    chown system system /sys/devices/virtual/ST_gyr/gyr/enable_polling
-    chown system system /sys/devices/virtual/ST_gyr/gyr/cali_data
-    chown system system /sys/devices/virtual/ST_gyr/gyr/debug_event_report
-
-    chmod 0660 /sys/devices/virtual/ST_gyr/gyr/enable_device
-    chmod 0660 /sys/devices/virtual/ST_gyr/gyr/pollrate_ms
-    chmod 0660 /sys/devices/virtual/ST_gyr/gyr/fifo_mode
-    chmod 0660 /sys/devices/virtual/ST_gyr/gyr/range
-    chmod 0660 /sys/devices/virtual/ST_gyr/gyr/fifo_samples
-    chmod 0660 /sys/devices/virtual/ST_gyr/gyr/enable_polling
-    chmod 0660 /sys/devices/virtual/ST_gyr/gyr/cali_data
-    chmod 0660 /sys/devices/virtual/ST_gyr/gyr/debug_event_report
-
-    # LSM330 Accelerometer
-    chown system system /sys/devices/virtual/ST_acc/acc/get_raw_data
-    chown system system /sys/devices/virtual/ST_acc/acc/enable_state_prog
-    chown system system /sys/devices/virtual/ST_acc/acc/pollrate_ms
-    chown system system /sys/devices/virtual/ST_acc/acc/enable_polling
-    chown system system /sys/devices/virtual/ST_acc/acc/enable_device
-    chown system system /sys/devices/virtual/ST_acc/acc/double_tap
-    chown system system /sys/devices/virtual/ST_acc/acc/chip_layout
-    chown system system /sys/devices/virtual/ST_acc/acc/range
-    chown system system /sys/devices/virtual/ST_acc/acc/set_k_value
-    chown system system /sys/devices/virtual/ST_acc/acc/calibration_version
-
-    chmod 0660 /sys/devices/virtual/ST_acc/acc/get_raw_data
-    chmod 0660 /sys/devices/virtual/ST_acc/acc/enable_state_prog
-    chmod 0660 /sys/devices/virtual/ST_acc/acc/pollrate_ms
-    chmod 0660 /sys/devices/virtual/ST_acc/acc/enable_polling
-    chmod 0660 /sys/devices/virtual/ST_acc/acc/enable_device
-    chmod 0660 /sys/devices/virtual/ST_acc/acc/double_tap
-    chmod 0660 /sys/devices/virtual/ST_acc/acc/chip_layout
-    chmod 0660 /sys/devices/virtual/ST_acc/acc/range
-    chmod 0660 /sys/devices/virtual/ST_acc/acc/set_k_value
-    chmod 0660 /sys/devices/virtual/ST_acc/acc/calibration_version
-
-    # BMA250 BOSCH
-    chown system system /sys/class/htc_g_sensor/g_sensor/enable_cir_interrupt
-    chmod 0660 /sys/class/htc_g_sensor/g_sensor/enable_cir_interrupt
-    chown system system /sys/class/htc_g_sensor/g_sensor/en_sig_motion
-    chmod 0660 /sys/class/htc_g_sensor/g_sensor/en_sig_motion
-
-    # YAS533 + KXTJ2
-    chown system system /sys/class/htc_g_sensor/kxtj2/iio/buffer/length
-    chown system system /sys/class/htc_g_sensor/kxtj2/iio/buffer/enable
-    chown system system /sys/class/htc_g_sensor/kxtj2/iio/trigger/current_trigger
-    chown system system /sys/class/htc_g_sensor/kxtj2/iio/sampling_frequency
-    chown root   system /sys/class/htc_g_sensor/kxtj2/iio/in_accel_x_calibbias
-    chown root   system /sys/class/htc_g_sensor/kxtj2/iio/in_accel_y_calibbias
-    chown root   system /sys/class/htc_g_sensor/kxtj2/iio/in_accel_z_calibbias
-    chown root   system /sys/class/htc_g_sensor/kxtj2/iio/in_accel_x_raw
-    chown root   system /sys/class/htc_g_sensor/kxtj2/iio/in_accel_y_raw
-    chown root   system /sys/class/htc_g_sensor/kxtj2/iio/in_accel_z_raw
-    chown system system /sys/class/htc_compass/yas53x/iio/buffer/length
-    chown system system /sys/class/htc_compass/yas53x/iio/buffer/enable
-    chown system system /sys/class/htc_compass/yas53x/iio/trigger/current_trigger
-    chown system system /sys/class/htc_compass/yas53x/iio/sampling_frequency
-    chown system system /sys/class/htc_compass/yas53x/iio/hard_offset
-    chown root   system /sys/class/htc_compass/yas53x/iio/in_magn_x_raw
-    chown root   system /sys/class/htc_compass/yas53x/iio/in_magn_y_raw
-    chown root   system /sys/class/htc_compass/yas53x/iio/in_magn_z_raw
-
-    chmod 0660 /sys/class/htc_g_sensor/kxtj2/iio/buffer/length
-    chmod 0660 /sys/class/htc_g_sensor/kxtj2/iio/buffer/enable
-    chmod 0660 /sys/class/htc_g_sensor/kxtj2/iio/trigger/current_trigger
-    chmod 0660 /sys/class/htc_g_sensor/kxtj2/iio/sampling_frequency
-    chmod 0660 /sys/class/htc_g_sensor/kxtj2/iio/in_accel_x_calibbias
-    chmod 0660 /sys/class/htc_g_sensor/kxtj2/iio/in_accel_y_calibbias
-    chmod 0660 /sys/class/htc_g_sensor/kxtj2/iio/in_accel_z_calibbias
-    chmod 0660 /sys/class/htc_g_sensor/kxtj2/iio/in_accel_x_raw
-    chmod 0660 /sys/class/htc_g_sensor/kxtj2/iio/in_accel_y_raw
-    chmod 0660 /sys/class/htc_g_sensor/kxtj2/iio/in_accel_z_raw
-    chmod 0660 /sys/class/htc_compass/yas53x/iio/buffer/length
-    chmod 0660 /sys/class/htc_compass/yas53x/iio/buffer/enable
-    chmod 0660 /sys/class/htc_compass/yas53x/iio/trigger/current_trigger
-    chmod 0660 /sys/class/htc_compass/yas53x/iio/sampling_frequency
-    chmod 0660 /sys/class/htc_compass/yas53x/iio/hard_offset
-    chmod 0660 /sys/class/htc_compass/yas53x/iio/in_magn_x_raw
-    chmod 0660 /sys/class/htc_compass/yas53x/iio/in_magn_y_raw
-    chmod 0660 /sys/class/htc_compass/yas53x/iio/in_magn_z_raw
-
-    chown system system /dev/iio:device0
-    chown system system /dev/iio:device1
-
-    # set G-Sensor and Compass permissions
-    chown compass system /dev/akm8975_aot
-    chown compass system /dev/akm8975_daemon
-    chown compass system /dev/bma150
-    chown system system /sys/class/htc_accelerometer/accelerometer/enable_cir_interrupt
-    chmod 0640 /dev/akm8975_aot
-    chmod 0640 /dev/akm8975_daemon
-    chmod 0640 /dev/bma150
-    chmod 0660 /sys/class/htc_accelerometer/accelerometer/enable_cir_interrupt
-
-    # HTC SSD Peripheral UI - END
-
-    # init PnPMgr node
-    chmod 0664 /sys/power/pnpmgr/apps/media_mode
-    chown media system /sys/power/pnpmgr/apps/media_mode
-    chown system /sys/power/pnpmgr/apps/activity_trigger
-    chown system /sys/power/pnpmgr/apps/non_activity_trigger
-    chown system /sys/power/pnpmgr/launch_event
-    chown system /sys/power/powersave
-    chown system /sys/power/pnpmgr/cluster/big/user_perf_lvl
-    chown system /sys/power/pnpmgr/cluster/big/user_lvl_to_min_freq
-    chown system /sys/power/pnpmgr/cluster/big/hotplug/user_cpunum_max
-    chown system /sys/power/pnpmgr/cluster/big/hotplug/user_cpunum_min
-    chown system /sys/power/pnpmgr/cluster/little/user_perf_lvl
-    chown system /sys/power/pnpmgr/cluster/little/user_lvl_to_min_freq
-    chown system /sys/power/pnpmgr/cluster/little/hotplug/user_cpunum_max
-    chown system /sys/power/pnpmgr/cluster/little/hotplug/user_cpunum_min
-    chown system /sys/power/pnpmgr/touch_boost
-    chown system /sys/power/pnpmgr/long_duration_touch_boost
-    chown system /sys/power/wait_for_fb_status
-    chmod 0664 /sys/power/pnpmgr/display/single_layer
-    chown system /sys/power/pnpmgr/display/single_layer
-
-    write /sys/power/pnpmgr/cluster/big/hotplug/mp_cpunum_max 4
-    write /sys/power/pnpmgr/cluster/big/hotplug/mp_cpunum_min 1
-    write /sys/power/pnpmgr/cluster/little/hotplug/mp_cpunum_max 4
-    write /sys/power/pnpmgr/cluster/little/hotplug/mp_cpunum_min 0
-    write /sys/power/pnpmgr/apps/activity_trigger "booting"
-    write /sys/power/pnpmgr/long_duration_touch_boost_duration 3000
-    write /sys/power/pnpmgr/touch_boost_duration 200
-
-    # HTC SSD Battery - BEGIN
-    chown system system /sys/class/power_supply/battery/full_level_dis_batt_chg
-    chmod 0220 /sys/class/power_supply/battery/full_level_dis_batt_chg
-    chown radio radio /sys/class/power_supply/battery/phone_call
-    chmod 0660 /sys/class/power_supply/battery/phone_call
-    chown media media /sys/class/power_supply/battery/play_music
-    chmod 0220 /sys/class/power_supply/battery/play_music
-    chown radio radio /sys/class/power_supply/battery/network_search
-    chmod 0220 /sys/class/power_supply/battery/network_search
-    chown system system /sys/class/power_supply/battery/navigation
-    chmod 0220 /sys/class/power_supply/battery/navigation
-    chown system system /sys/class/power_supply/battery/disable_limit_chg
-    chmod 0220 /sys/class/power_supply/battery/disable_limit_chg
-    # HTC SSD Battery - END
-
-    chown root system /sys/devices/system/cpu/cpu1/online
-    chmod 0664 /sys/devices/system/cpu/cpu1/online
-    chown root system /sys/devices/system/cpu/cpu2/online
-    chmod 0664 /sys/devices/system/cpu/cpu2/online
-    chown root system /sys/devices/system/cpu/cpu3/online
-    chmod 0664 /sys/devices/system/cpu/cpu3/online
-    chown root system /sys/devices/system/cpu/cpu4/online
-    chmod 0664 /sys/devices/system/cpu/cpu4/online
-    chown root system /sys/devices/system/cpu/cpu5/online
-    chmod 0664 /sys/devices/system/cpu/cpu5/online
-    chown root system /sys/devices/system/cpu/cpu6/online
-    chmod 0664 /sys/devices/system/cpu/cpu6/online
-    chown root system /sys/devices/system/cpu/cpu7/online
-    chmod 0664 /sys/devices/system/cpu/cpu7/online
-
-    # Setup Launch event timeout vaule
-    setprop persist.htc.multicore.timeout 1000
-    setprop persist.htc.multicore.innerT 500
-
 on early-boot
     # set RLIMIT_MEMLOCK to 64MB
     setrlimit 8 67108864 67108864
@@ -274,8 +108,12 @@ on boot
     start rmt_storage
     start rfs_access
     write /sys/bus/i2c/devices/2-0020/input/input0/update_fw 1
-
-    chown bluetooth bluetooth /sys/module/bluetooth_power/parameters/power
+    # bring cores online
+	write /sys/module/msm_thermal/core_control/enabled 0
+	write /sys/devices/system/cpu/cpu0/online 1
+    write /sys/devices/system/cpu/cpu1/online 1
+    write /sys/module/msm_thermal/core_control/enabled 1
+ chown bluetooth bluetooth /sys/module/bluetooth_power/parameters/power
     chown bluetooth net_bt /sys/class/rfkill/rfkill0/type
     chown bluetooth net_bt /sys/class/rfkill/rfkill0/state
     chown bluetooth bluetooth /proc/bluetooth/sleep/proto
@@ -302,11 +140,28 @@ on boot
 
     #Create QMUX deamon socket area
     mkdir /dev/socket/qmux_radio 0770 radio radio
+    chmod 2770 /dev/socket/qmux_radio
     mkdir /dev/socket/qmux_audio 0770 media audio
+    chmod 2770 /dev/socket/qmux_audio
     mkdir /dev/socket/qmux_bluetooth 0770 bluetooth bluetooth
+    chmod 2770 /dev/socket/qmux_bluetooth
     mkdir /dev/socket/qmux_gps 0770 gps gps
+    chmod 2770 /dev/socket/qmux_gps
     mkdir /dev/socket/qmux_nfc 0770 nfc nfc
+    chmod 2770 /dev/socket/qmux_nfc
 
+    # Feature chip vendor : brcm
+    setprop bluetooth.chip.vendor brcm
+
+    # For BCM FM Radio
+    setprop ro.fm.module BCM
+
+    chown bluetooth net_bt_stack /dev/btlock
+    chmod 0600 /dev/btlock
+
+    # WiFi
+    chown wifi wifi /dev/rfkill
+    chmod 0600 /dev/rfkill
     setprop wifi.interface wlan0
 
 #   Define TCP buffer sizes for various networks
@@ -396,120 +251,6 @@ on boot
     # Allow access for CCID command/response timeout configuration
     chown system system /sys/module/ccid_bridge/parameters/bulk_msg_timeout
 
-# HTC_PROCESS_DEBUG file to maintain the monitoring process list, change owner to system
-    chown system /sys/process/task_comm_list
-
-# HTC SSD USB
-    chown system radio /sys/class/android_usb/f_modem/on
-    chown root usb /sys/class/android_usb/f_acm/baud_rate
-    chown system system /sys/class/android_usb/f_diag/on
-    chown system system /sys/class/android_usb/f_rmnet/on
-    chown system system /sys/devices/platform/android_usb/usb_disable
-    chown system radio /sys/devices/platform/android_usb/usb_modem_enable
-
-# HTC SSD Camera
-# For Flashlight Restriction
-    chown system system /sys/camera_led_status/led_hotspot_status
-
-# HTC SSD Peripheral UI - BEGIN
-
-    # P-sensor
-    chown radio radio /sys/class/optical_sensors/proximity/PhoneApp_status
-    chmod 0660 /sys/class/optical_sensors/proximity/PhoneApp_status
-
-    # LED
-    chown system system /sys/class/leds/green/brightness
-    chown system system /sys/class/leds/green/blink
-    chown system system /sys/class/leds/green/off_timer
-    chown system system /sys/class/leds/amber/brightness
-    chown system system /sys/class/leds/amber/blink
-    chown system system /sys/class/leds/amber/off_timer
-    chown system system /sys/class/leds/indicator/ModeRGB
-    chown system system /sys/class/leds/indicator/off_timer
-
-    chmod 0660 /sys/class/leds/amber/brightness
-    chmod 0660 /sys/class/leds/amber/blink
-    chmod 0660 /sys/class/leds/amber/off_timer
-    chmod 0660 /sys/class/leds/green/brightness
-    chmod 0660 /sys/class/leds/green/blink
-    chmod 0660 /sys/class/leds/green/off_timer
-    chmod 0660 /sys/class/leds/indicator/ModeRGB
-    chmod 0660 /sys/class/leds/indicator/off_timer
-
-    #htc sensorhub
-    chown system system /sys/class/htc_g_sensor/g_sensor/clear_powerkey_flag
-    chmod 0660 /sys/class/htc_g_sensor/g_sensor/clear_powerkey_flag
-
-    # Motion Sensors ++
-    chown system system /dev/iio:device0
-    chown system system /sys/class/htc_sensorhub/sensor_hub/iio/buffer/enable
-    chown system system /sys/class/htc_sensorhub/sensor_hub/iio/buffer/length
-    chown system system /sys/class/htc_sensorhub/sensor_hub/iio/trigger/current_trigger
-
-    chmod 660 /dev/iio:device0
-    chmod 660 /sys/class/htc_sensorhub/sensor_hub/iio/buffer/enable
-    chmod 660 /sys/class/htc_sensorhub/sensor_hub/iio/buffer/length
-    chmod 660 /sys/class/htc_sensorhub/sensor_hub/iio/trigger/current_trigger
-
-    chown system system /sys/class/htc_sensorhub/sensor_hub/enable
-    chown system system /sys/class/htc_sensorhub/sensor_hub/delay_ms
-    chown system system /sys/class/htc_sensorhub/sensor_hub/barometer_self_test
-    chown system system /sys/class/htc_sensorhub/sensor_hub/AP_calibrator_data_accRL
-    chown system system /sys/class/htc_sensorhub/sensor_hub/calibrator_en
-    chown system system /sys/class/htc_sensorhub/sensor_hub/calibrator_status_acc
-    chown system system /sys/class/htc_sensorhub/sensor_hub/calibrator_status_mag
-    chown system system /sys/class/htc_sensorhub/sensor_hub/calibrator_status_gyro
-    chown system system /sys/class/htc_sensorhub/sensor_hub/calibrator_data_acc
-    chown system system /sys/class/htc_sensorhub/sensor_hub/calibrator_data_accRL
-    chown system system /sys/class/htc_sensorhub/sensor_hub/calibrator_data_mag
-    chown system system /sys/class/htc_sensorhub/sensor_hub/calibrator_data_gyro
-    chown system system /sys/class/htc_sensorhub/sensor_hub/calibrator_data_light
-    chown system system /sys/class/htc_sensorhub/sensor_hub/calibrator_data_proximity
-    chown system system /sys/class/htc_sensorhub/sensor_hub/calibrator_data_barometer
-    chown system system /sys/class/htc_sensorhub/sensor_hub/data_barometer
-    chown system system /sys/class/htc_sensorhub/sensor_hub/data_proximity
-    chown system system /sys/class/htc_sensorhub/sensor_hub/data_proximity_polling
-    chown system system /sys/class/htc_sensorhub/sensor_hub/data_light_polling
-    chown system system /sys/class/htc_sensorhub/sensor_hub/sensor_hub_rdata
-    chown system system /sys/class/htc_sensorhub/sensor_hub/ps_canc
-    chown system system /sys/class/htc_sensorhub/sensor_hub/data_light_kadc
-    chown system system /sys/class/htc_sensorhub/sensor_hub/firmware_version
-    chown system system /sys/class/htc_sensorhub/sensor_hub/uart_debug
-    chown system system /sys/class/htc_sensorhub/sensor_hub/boot_mode
-    chown system system /sys/class/htc_sensorhub/sensor_hub/ls_mechanism
-    chown system system /sys/class/htc_sensorhub/sensor_hub/nvram_cali_data
-    chown system gesture_motion /sys/class/htc_sensorhub/sensor_hub/gesture_motion
-    chown system system /sys/class/htc_sensorhub/sensor_hub/mcu_wakeup
-    chmod 0664 /sys/class/htc_sensorhub/sensor_hub/enable
-    chmod 0664 /sys/class/htc_sensorhub/sensor_hub/delay_ms
-    chmod 0664 /sys/class/htc_sensorhub/sensor_hub/barometer_self_test
-    chmod 0664 /sys/class/htc_sensorhub/sensor_hub/AP_calibrator_data_accRL
-    chmod 0664 /sys/class/htc_sensorhub/sensor_hub/calibrator_en
-    chmod 0664 /sys/class/htc_sensorhub/sensor_hub/calibrator_status_acc
-    chmod 0664 /sys/class/htc_sensorhub/sensor_hub/calibrator_status_mag
-    chmod 0664 /sys/class/htc_sensorhub/sensor_hub/calibrator_status_gyro
-    chmod 0664 /sys/class/htc_sensorhub/sensor_hub/calibrator_data_acc
-    chmod 0664 /sys/class/htc_sensorhub/sensor_hub/calibrator_data_accRL
-    chmod 0664 /sys/class/htc_sensorhub/sensor_hub/calibrator_data_mag
-    chmod 0664 /sys/class/htc_sensorhub/sensor_hub/calibrator_data_gyro
-    chmod 0664 /sys/class/htc_sensorhub/sensor_hub/calibrator_data_light
-    chmod 0664 /sys/class/htc_sensorhub/sensor_hub/calibrator_data_proximity
-    chmod 0664 /sys/class/htc_sensorhub/sensor_hub/calibrator_data_barometer
-    chmod 0664 /sys/class/htc_sensorhub/sensor_hub/data_barometer
-    chmod 0664 /sys/class/htc_sensorhub/sensor_hub/data_proximity
-    chmod 0664 /sys/class/htc_sensorhub/sensor_hub/data_proximity_polling
-    chmod 0664 /sys/class/htc_sensorhub/sensor_hub/data_light_polling
-    chmod 0664 /sys/class/htc_sensorhub/sensor_hub/sensor_hub_rdata
-    chmod 0664 /sys/class/htc_sensorhub/sensor_hub/ps_canc
-    chmod 0664 /sys/class/htc_sensorhub/sensor_hub/data_light_kadc
-    chmod 0664 /sys/class/htc_sensorhub/sensor_hub/firmware_version
-    chmod 0664 /sys/class/htc_sensorhub/sensor_hub/uart_debug
-    chmod 0664 /sys/class/htc_sensorhub/sensor_hub/boot_mode
-    chmod 0664 /sys/class/htc_sensorhub/sensor_hub/ls_mechanism
-    chmod 0664 /sys/class/htc_sensorhub/sensor_hub/nvram_cali_data
-    chmod 0664 /sys/class/htc_sensorhub/sensor_hub/gesture_motion
-    chmod 0664 /sys/class/htc_sensorhub/sensor_hub/mcu_wakeup
-
     # Flashlight
     chown system system /sys/class/leds/flashlight/brightness
     chown system system /sys/class/leds/flashlight_front/brightness
@@ -517,98 +258,11 @@ on boot
     chown system system /sys/class/leds/torch_0_front/brightness
     chown system system /sys/class/leds/torch_1_front/brightness
 
-    # CIR
-    chown system system /sys/class/htc_cir/cir/reset_cir
-    chmod 0660 /sys/class/htc_cir/cir/reset_cir
-    chown system system /sys/class/htc_cir/cir/enable_cir
-    chmod 0660 /sys/class/htc_cir/cir/enable_cir
-    chown system system /sys/class/htc_cir/cir/enable_learn
-    chmod 0660 /sys/class/htc_cir/cir/enable_learn
-    chown system system /sys/class/htc_cir/cir/enable_uart
-    chmod 0660 /sys/class/htc_cir/cir/enable_uart
-
-    # Barometer
-    chown root system /system/bin/htcbarocal_csd
-    chmod 0750 /system/bin/htcbarocal_csd
-
-    # KXTJ2
-    chown system system /sys/class/htc_g_sensor/kxtj2/iio/buffer/length
-    chown system system /sys/class/htc_g_sensor/kxtj2/iio/buffer/enable
-    chown system system /sys/class/htc_g_sensor/kxtj2/iio/trigger/current_trigger
-    chown system system /sys/class/htc_g_sensor/kxtj2/iio/sampling_frequency
-    chown root   system /sys/class/htc_g_sensor/kxtj2/iio/in_accel_x_calibbias
-    chown root   system /sys/class/htc_g_sensor/kxtj2/iio/in_accel_y_calibbias
-    chown root   system /sys/class/htc_g_sensor/kxtj2/iio/in_accel_z_calibbias
-    chown root   system /sys/class/htc_g_sensor/kxtj2/iio/in_accel_x_raw
-    chown root   system /sys/class/htc_g_sensor/kxtj2/iio/in_accel_y_raw
-    chown root   system /sys/class/htc_g_sensor/kxtj2/iio/in_accel_z_raw
-
-    chmod 0660 /sys/class/htc_g_sensor/kxtj2/iio/buffer/length
-    chmod 0660 /sys/class/htc_g_sensor/kxtj2/iio/buffer/enable
-    chmod 0660 /sys/class/htc_g_sensor/kxtj2/iio/trigger/current_trigger
-    chmod 0660 /sys/class/htc_g_sensor/kxtj2/iio/sampling_frequency
-    chmod 0660 /sys/class/htc_g_sensor/kxtj2/iio/in_accel_x_calibbias
-    chmod 0660 /sys/class/htc_g_sensor/kxtj2/iio/in_accel_y_calibbias
-    chmod 0660 /sys/class/htc_g_sensor/kxtj2/iio/in_accel_z_calibbias
-    chmod 0660 /sys/class/htc_g_sensor/kxtj2/iio/in_accel_x_raw
-    chmod 0660 /sys/class/htc_g_sensor/kxtj2/iio/in_accel_y_raw
-    chmod 0660 /sys/class/htc_g_sensor/kxtj2/iio/in_accel_z_raw
-
     chown system system /dev/iio:device0
-
-    # AKM09911
-    chown compass system /dev/akm09911
-    chown system system /dev/akm09911_dev
-    # chown system system /sys/class/htc_accelerometer/accelerometer/enable_cir_interrupt
-    chown system system /sys/class/compass/akm09911/enable_acc
-    chown system system /sys/class/compass/akm09911/enable_mag
-    chown system system /sys/class/compass/akm09911/enable_maguc
-    chown system system /sys/class/compass/akm09911/enable_fusion
-    chown system system /sys/class/compass/akm09911/delay_acc
-
-    chown system system /sys/class/compass/akm09911/delay_mag
-    chown system system /sys/class/compass/akm09911/delay_maguc
-    chown system system /sys/class/compass/akm09911/delay_fusion
-    chown system system /sys/class/compass/akm09911/accel
-    chmod 0640 /dev/akm09911
-    chmod 0660 /dev/akm09911_dev
-    # chmod 0660 /sys/class/htc_accelerometer/accelerometer/enable_cir_interrupt
-    chmod 0660 /sys/class/compass/akm09911/enable_acc
-    chmod 0660 /sys/class/compass/akm09911/enable_mag
-    chmod 0660 /sys/class/compass/akm09911/enable_maguc
-    chmod 0660 /sys/class/compass/akm09911/enable_fusion
-    chmod 0660 /sys/class/compass/akm09911/delay_acc
-    chmod 0660 /sys/class/compass/akm09911/delay_mag
-    chmod 0660 /sys/class/compass/akm09911/delay_maguc
-    chmod 0660 /sys/class/compass/akm09911/delay_fusion
-    chmod 0660 /sys/class/compass/akm09911/accel
-
-# HTC SSD Peripheral UI - END
-
-# HTC Embedded Log - BEGIN
-    chown root root /devlog
-    chmod 0700 /devlog
-    chown root root /fataldevlog
-    chmod 0700 /fataldevlog
-# HTC Embedded Log - END
-
-# HTC SSD Peripheral TOUCH - BEGIN
-
-    #set touch permissions
-    chown system system /sys/android_touch/unlock
-    chown system system /sys/android_touch/glove_setting
 
     #volume key wake up attribute file permission
     chown media media /sys/keyboard/vol_wakeup
 
-# HTC SSD Peripheral TOUCH - END
-
-# HTC set radio_feedback permissions
-    chown radio radio /dev/radio_feedback
-    chmod 0660 /dev/radio_feedback
-
-# For RIL to set htc_monitor_param permission
-    chown radio radio /sys/htc_monitor_status/htc_monitor_param
 
     # Define TCP buffer sizes for various networks
     #   ReadMin, ReadInitial, ReadMax, WriteMin, WriteInitial, WriteMax,
@@ -630,78 +284,6 @@ on boot
 
     class_start core
 
-#HTC SSD Security - set DRM permission
-    chown drm system /dev/htcdrm
-    chmod 0660 /dev/htcdrm
-
-    # Motion Sensors ++
-    chown system system /dev/iio:device0
-    chown system system /sys/class/htc_sensorhub/sensor_hub/iio/buffer/enable
-    chown system system /sys/class/htc_sensorhub/sensor_hub/iio/buffer/length
-    chown system system /sys/class/htc_sensorhub/sensor_hub/iio/trigger/current_trigger
-
-    chmod 660 /dev/iio:device0
-    chmod 660 /sys/class/htc_sensorhub/sensor_hub/iio/buffer/enable
-    chmod 660 /sys/class/htc_sensorhub/sensor_hub/iio/buffer/length
-    chmod 660 /sys/class/htc_sensorhub/sensor_hub/iio/trigger/current_trigger
-
-    chown system system /sys/devices/virtual/htc_sensorhub/sensor_hub/ap_calibrator_data_acc_rl
-    chown system system /sys/devices/virtual/htc_sensorhub/sensor_hub/calibrator_data_acc
-    chown system system /sys/devices/virtual/htc_sensorhub/sensor_hub/calibrator_data_acc_rl
-    chown system system /sys/devices/virtual/htc_sensorhub/sensor_hub/calibrator_data_barometer
-    chown system system /sys/devices/virtual/htc_sensorhub/sensor_hub/calibrator_data_gyro
-    chown system system /sys/devices/virtual/htc_sensorhub/sensor_hub/calibrator_data_light
-    chown system system /sys/devices/virtual/htc_sensorhub/sensor_hub/calibrator_data_mag
-    chown system system /sys/devices/virtual/htc_sensorhub/sensor_hub/calibrator_en
-    chown system system /sys/devices/virtual/htc_sensorhub/sensor_hub/calibrator_status_acc
-    chown system system /sys/devices/virtual/htc_sensorhub/sensor_hub/calibrator_status_gyro
-    chown system system /sys/devices/virtual/htc_sensorhub/sensor_hub/calibrator_status_mag
-    chown system system /sys/devices/virtual/htc_sensorhub/sensor_hub/data_barometer
-    chown system system /sys/devices/virtual/htc_sensorhub/sensor_hub/data_light_kadc
-    chown system system /sys/devices/virtual/htc_sensorhub/sensor_hub/data_light_polling
-    chown system system /sys/devices/virtual/htc_sensorhub/sensor_hub/delay_ms
-    chown system system /sys/devices/virtual/htc_sensorhub/sensor_hub/enable
-    chown system system /sys/devices/virtual/htc_sensorhub/sensor_hub/batch_enable
-    chown system system /sys/devices/virtual/htc_sensorhub/sensor_hub/flush
-    chown system system /sys/devices/virtual/htc_sensorhub/sensor_hub/firmware_version
-    chown system system /sys/devices/virtual/htc_sensorhub/sensor_hub/hall_sensor
-    chown system system /sys/devices/virtual/htc_sensorhub/sensor_hub/sensor_hub_rdata
-    chown system system /sys/devices/virtual/htc_sensorhub/sensor_hub/facedown_enabled
-    chown system gesture_motion /sys/class/htc_sensorhub/sensor_hub/gesture_motion
-    chown system system /sys/class/htc_sensorhub/sensor_hub/mcu_wakeup
-    chown system system /sys/class/htc_sensorhub/sensor_hub/dbg_flag
-    chown system system /sys/class/optical_sensors/proximity/p_status
-    chown radio radio /sys/class/optical_sensors/proximity/ps_adc
-
-    chmod 664 /sys/devices/virtual/htc_sensorhub/sensor_hub/ap_calibrator_data_acc_rl
-    chmod 664 /sys/devices/virtual/htc_sensorhub/sensor_hub/calibrator_data_acc
-    chmod 664 /sys/devices/virtual/htc_sensorhub/sensor_hub/calibrator_data_acc_rl
-    chmod 664 /sys/devices/virtual/htc_sensorhub/sensor_hub/calibrator_data_barometer
-    chmod 664 /sys/devices/virtual/htc_sensorhub/sensor_hub/calibrator_data_gyro
-    chmod 664 /sys/devices/virtual/htc_sensorhub/sensor_hub/calibrator_data_light
-    chmod 664 /sys/devices/virtual/htc_sensorhub/sensor_hub/calibrator_data_mag
-    chmod 664 /sys/devices/virtual/htc_sensorhub/sensor_hub/calibrator_en
-    chmod 664 /sys/devices/virtual/htc_sensorhub/sensor_hub/calibrator_status_acc
-    chmod 664 /sys/devices/virtual/htc_sensorhub/sensor_hub/calibrator_status_gyro
-    chmod 664 /sys/devices/virtual/htc_sensorhub/sensor_hub/calibrator_status_mag
-    chmod 664 /sys/devices/virtual/htc_sensorhub/sensor_hub/data_barometer
-    chmod 664 /sys/devices/virtual/htc_sensorhub/sensor_hub/data_light_kadc
-    chmod 664 /sys/devices/virtual/htc_sensorhub/sensor_hub/data_light_polling
-    chmod 664 /sys/devices/virtual/htc_sensorhub/sensor_hub/delay_ms
-    chmod 664 /sys/devices/virtual/htc_sensorhub/sensor_hub/enable
-    chmod 664 /sys/devices/virtual/htc_sensorhub/sensor_hub/batch_enable
-    chmod 664 /sys/devices/virtual/htc_sensorhub/sensor_hub/flush
-    chmod 664 /sys/devices/virtual/htc_sensorhub/sensor_hub/firmware_version
-    chmod 664 /sys/devices/virtual/htc_sensorhub/sensor_hub/hall_sensor
-    chmod 664 /sys/devices/virtual/htc_sensorhub/sensor_hub/sensor_hub_rdata
-    chmod 664 /sys/devices/virtual/htc_sensorhub/sensor_hub/facedown_enabled
-    chmod 664 /sys/class/htc_sensorhub/sensor_hub/gesture_motion
-    chmod 664 /sys/class/htc_sensorhub/sensor_hub/mcu_wakeup
-    chmod 664 /sys/class/htc_sensorhub/sensor_hub/dbg_flag
-    chmod 444 /sys/class/optical_sensors/proximity/p_status
-    chmod 444 /sys/class/optical_sensors/proximity/ps_adc
-    # Motion Sensors --
-
     # NFC ++
     # permissions for NFC
     chmod 0600 /dev/pn544
@@ -715,6 +297,127 @@ on boot
 
     # exfat
     insmod /system/lib/modules/texfat.ko
+    
+    chown system system /sys/devices/system/cpu/cpufreq/interactive/timer_rate
+    chmod 0660 /sys/devices/system/cpu/cpufreq/interactive/timer_rate
+    chown system system /sys/devices/system/cpu/cpufreq/interactive/timer_slack
+    chmod 0660 /sys/devices/system/cpu/cpufreq/interactive/timer_slack
+    chown system system /sys/devices/system/cpu/cpufreq/interactive/min_sample_time
+    chmod 0660 /sys/devices/system/cpu/cpufreq/interactive/min_sample_time
+    chown system system /sys/devices/system/cpu/cpufreq/interactive/hispeed_freq
+    chmod 0660 /sys/devices/system/cpu/cpufreq/interactive/hispeed_freq
+    chown system system /sys/devices/system/cpu/cpufreq/interactive/target_loads
+    chmod 0660 /sys/devices/system/cpu/cpufreq/interactive/target_loads
+    chown system system /sys/devices/system/cpu/cpufreq/interactive/go_hispeed_load
+    chmod 0660 /sys/devices/system/cpu/cpufreq/interactive/go_hispeed_load
+    chown system system /sys/devices/system/cpu/cpufreq/interactive/above_hispeed_delay
+    chmod 0660 /sys/devices/system/cpu/cpufreq/interactive/above_hispeed_delay
+    chown system system /sys/devices/system/cpu/cpufreq/interactive/boost
+    chmod 0660 /sys/devices/system/cpu/cpufreq/interactive/boost
+    chown system system /sys/devices/system/cpu/cpufreq/interactive/boostpulse
+    chown system system /sys/devices/system/cpu/cpufreq/interactive/input_boost
+    chmod 0660 /sys/devices/system/cpu/cpufreq/interactive/input_boost
+    chown system system /sys/devices/system/cpu/cpufreq/interactive/boostpulse_duration
+    chmod 0660 /sys/devices/system/cpu/cpufreq/interactive/boostpulse_duration
+    chown system system /sys/devices/system/cpu/cpufreq/interactive/io_is_busy
+    chmod 0660 /sys/devices/system/cpu/cpufreq/interactive/io_is_busy
+
+    # Assume SMP uses shared cpufreq policy for all CPUs
+    chown system system /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
+    chmod 0660 /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
+
+
+# START touch_driver
+	chown system system /sys/devices/virtual/input/lge_touch/incoming_call
+	chmod 664 /sys/devices/virtual/input/lge_touch/incoming_call
+	chown system system /sys/devices/virtual/input/lge_touch/ime_status
+	chown system lgkeyguard /sys/devices/virtual/input/lge_touch/keyguard
+	chmod 664 /sys/devices/virtual/input/lge_touch/keyguard
+	chown system system /sys/devices/virtual/input/lge_touch/ts_noise_log_enable
+	chmod 664 /sys/devices/virtual/input/lge_touch/ts_noise_log_enable
+	chown system system /sys/devices/virtual/input/lge_touch/ts_noise
+	chmod 664 /sys/devices/virtual/input/lge_touch/ts_noise
+	chown system system /sys/devices/virtual/input/lge_touch/sensing_test
+	chmod 664 /sys/devices/virtual/input/lge_touch/sensing_test
+	chown system system /sys/devices/virtual/input/lge_touch/hidden_normal_cal_state
+	chmod 664 /sys/devices/virtual/input/lge_touch/hidden_normal_cal_state
+	chown system system /sys/devices/virtual/input/lge_touch/hidden_lpwg_cal_state
+	chmod 664 /sys/devices/virtual/input/lge_touch/hidden_lpwg_cal_state
+# END touch_driver
+
+# START touch_knock_on
+	chown system system /sys/devices/virtual/input/lge_touch/lpwg_data
+	chmod 664 /sys/devices/virtual/input/lge_touch/lpwg_data
+	chown system radio /sys/devices/virtual/input/lge_touch/lpwg_notify
+	chmod 664 /sys/devices/virtual/input/lge_touch/lpwg_notify
+	write /sys/devices/virtual/input/lge_touch/lpwg_notify "1 1 0 0"
+	chown system system /sys/devices/virtual/input/lge_touch/lpwg_test_info
+	chmod 644 /sys/devices/virtual/input/lge_touch/lpwg_test_info
+	chown system system /sys/devices/virtual/input/lge_touch/lpwg_test_ctrl
+	chmod 644 /sys/devices/virtual/input/lge_touch/lpwg_test_ctrl
+	chown system system /sys/devices/virtual/input/lge_touch/touch_wake_up_test
+	chmod 664 /sys/devices/virtual/input/lge_touch/touch_wake_up_test
+	chown system system /sys/devices/virtual/input/lge_touch/quick_cover_status
+	chmod 664 /sys/devices/virtual/input/lge_touch/quick_cover_status
+# END touch_knock_on
+    lge_chcon_recursive /data/property u:object_r:property_data_file:s0
+    lge_chcon_recursive /data/security u:object_r:security_file:s0
+    start chcon_keystore
+    
+
+    chown media media /sys/devices/soc.0/qcom,msm-pcm-routing.39/cfg_string_rx
+    chown media media /sys/devices/soc.0/qcom,msm-pcm-routing.39/cfg_string_tx
+    chmod 644 /sys/devices/soc.0/qcom,msm-pcm-routing.39/cfg_string_rx
+    chmod 644 /sys/devices/soc.0/qcom,msm-pcm-routing.39/cfg_string_tx
+
+# Begin LG Volume vibrator
+    chown system system /sys/class/timed_output/vibrator/amp
+    chmod 664 /sys/class/timed_output/vibrator/amp
+# End LG Volume vibrator
+
+# Begin SRE Display New Feature
+    chown system system /sys/class/sre/sre_func/sre_status
+    chmod 644 /sys/class/sre/sre_func/sre_status
+
+# End SRE Display New Feature
+
+# Power_BSP, if need, control max_frequencies for peak current issue
+# Power_BSP, LGE raise log level until pr_info for debug
+   write /proc/sys/kernel/printk "7 4 1 7"
+# emotional led
+   chown system system /sys/devices/virtual/lg_rgb_led/use_patterns/blink_patterns
+   chmod 0644 /sys/devices/virtual/lg_rgb_led/use_patterns/blink_patterns
+   chown system system /sys/devices/virtual/lg_rgb_led/use_patterns/input_patterns
+   chmod 0644 /sys/devices/virtual/lg_rgb_led/use_patterns/input_patterns
+   chown system system /sys/devices/virtual/lg_rgb_led/use_patterns/onoff_patterns
+   chmod 0644 /sys/devices/virtual/lg_rgb_led/use_patterns/onoff_patterns
+   chown system system /sys/devices/virtual/lg_rgb_led/use_patterns/setting
+   chmod 0644 /sys/devices/virtual/lg_rgb_led/use_patterns/setting
+   write /sys/devices/virtual/lg_rgb_led/use_patterns/setting 0
+# For QC2.0
+   chown root system /sys/module/charger_controller/parameters/quick_charging_state
+   chmod 0664 /sys/module/charger_controller/parameters/quick_charging_state
+
+# Power_BSP, add critical temp property for PM8992
+   on property:persist.service.criticaltemp=0
+   write /sys/kernel/debug/spmi/spmi-0/address 0x00867
+   write /sys/kernel/debug/spmi/spmi-0/data 0x80
+   write /sys/kernel/debug/spmi/spmi-0/address 0x20867
+   write /sys/kernel/debug/spmi/spmi-0/data 0x80
+   write /sys/module/msm_thermal/parameters/reset_temp 0
+   write /sys/devices/virtual/thermal/thermal_zone2/ctrl_crit_temp 0
+   write /sys/devices/virtual/thermal/thermal_zone3/ctrl_crit_temp 0
+   write /sys/devices/virtual/thermal/thermal_zone4/ctrl_crit_temp 0
+   write /sys/devices/virtual/thermal/thermal_zone5/ctrl_crit_temp 0
+   write /sys/devices/virtual/thermal/thermal_zone6/ctrl_crit_temp 0
+   write /sys/devices/virtual/thermal/thermal_zone7/ctrl_crit_temp 0
+   write /sys/devices/virtual/thermal/thermal_zone8/ctrl_crit_temp 0
+   write /sys/devices/virtual/thermal/thermal_zone9/ctrl_crit_temp 0
+   write /sys/devices/virtual/thermal/thermal_zone10/ctrl_crit_temp 0
+   write /sys/devices/virtual/thermal/thermal_zone11/ctrl_crit_temp 0
+   write /sys/devices/virtual/thermal/thermal_zone12/ctrl_crit_temp 0
+   write /sys/devices/virtual/thermal/thermal_zone13/ctrl_crit_temp 0
+   write /sys/devices/virtual/thermal/thermal_zone14/ctrl_crit_temp 0
 
 on post-fs
 
@@ -728,16 +431,14 @@ on post-fs
     chown root log /proc/slabinfo
     chmod 0440 /proc/slabinfo
 
+    mkdir /data/misc/bluetooth 0770 bluetooth bluetooth
+    
     chown system carrier /carrier
     chmod 0771 /carrier
     #restorecon carrier partition.
     restorecon_recursive /carrier
     # We restorecon /preload in case preload folder has been reset.
     restorecon_recursive /preload
-
-# change mode & owner of HTC Debug Driver node
-    chown root system /proc/driver/hdf
-    chmod 0664 /proc/driver/hdf
 
 # msm specific files that need to be created on /data
 on post-fs-data
@@ -860,6 +561,13 @@ on post-fs-data
     mkdir /data/system/perfd 0770 root system
     chmod 2770 /data/system/perfd
 
+    # Create directory used by sensor subsystem
+    mkdir /persist/sensors 0775 system root
+    chmod 0664 /persist/sensors/sensors_settings
+    chown system root /persist/sensors/sensors_settings
+    mkdir /data/misc/sensors 0775 system system
+    restorecon_recursive /data/misc/sensors
+
     mkdir /data/tombstones 0771 system system
     mkdir /tombstones/modem 0771 system system
     mkdir /tombstones/lpass 0771 system system
@@ -883,16 +591,12 @@ on post-fs-data
     restorecon_recursive /cota
     mkdir /data/usf 0700 system system
 
+    # Z2G4-BSP-TS@lge.com make directory for sns.reg used by sensordaemon
+    mkdir /sns/cal/ 0644 system system
+
     # PCC Calibration
     chown system system /sys/devices/virtual/graphics/fb0/rgb
     chmod 0660 /sys/devices/virtual/graphics/fb0/rgb
-
-service hrdump /system/bin/hrdump -s
-    disabled
-    oneshot
-
-on property:ro.boot.htc.hrdump=detected
-    setprop debug.htc.hrdump "detected"
 
 service ssr_setup /system/bin/ssr_setup
     oneshot
@@ -993,18 +697,6 @@ service start_hci_filter /system/bin/wcnss_filter
     group bluetooth qcom_diag net_bt_stack
     disabled
 
-service config_bluetooth /system/bin/sh /system/etc/init.qcom.bt.sh "onboot"
-    class core
-    user root
-    oneshot
-
-service hciattach /system/bin/sh /system/etc/init.qcom.bt.sh
-    class late_start
-    user bluetooth
-    group bluetooth net_bt_admin
-    disabled
-    oneshot
-
 on property:bluetooth.hciattach=true
     start hciattach
 
@@ -1042,7 +734,7 @@ service btsnoop /system/bin/btsnoop
 service ftmd /system/bin/logwrapper /system/bin/ftmdaemon
     class late_start
     user root
-    group bluetooth net_bt_admin misc net_bt_stack qcom_diag net_bt
+    group bluetooth net_bt_admin misc net_bt_stack qcom_diag net_bt_stack
     disabled
     oneshot
 
@@ -1174,7 +866,7 @@ service dhcpcd_bnep3 /system/bin/dhcpcd -BKLG
 service dhcpcd_bnep4 /system/bin/dhcpcd -BKLG
     disabled
     oneshot
-
+    
 service fm_dl /system/bin/sh /system/etc/init.qcom.fm.sh
     class late_start
     user root
@@ -1197,11 +889,6 @@ on property:drmdiag.load=1
 
 on property:drmdiag.load=0
     stop drmdiag
-
-service qcom-sh /system/bin/sh /init.qcom.sh
-    class late_start
-    user root
-    oneshot
 
 service qcom-post-boot /system/bin/sh /system/etc/init.qcom.post_boot.sh
     class late_start
@@ -1228,14 +915,24 @@ service battery_monitor /system/bin/battery_monitor
     group system
     disabled
 
+service ril-daemon /system/bin/rild
+    class main
+    socket rild stream 660 root radio
+    socket rild-debug stream 660 radio system
+    user root
+#[START][P6][LGE_VSS_QCCI][changhwan.lee] Enable create socket for IPC router
+#    group radio cache inet misc audio log qcom_diag
+    group radio cache inet misc audio log qcom_diag net_raw
+#[END][P6][LGE_VSS_QCCI][changhwan.lee] Enable create socket for IPC router
+
 service ril-daemon2 /system/bin/rild -c 2
     class main
     socket rild2 stream 660 root radio
     socket rild-debug2 stream 660 radio system
     user root
-    disabled
     group radio cache inet misc audio sdcard_r sdcard_rw diag qcom_diag log
-
+    disabled
+    
 service ril-daemon3 /system/bin/rild -c 3
     class main
     socket rild3 stream 660 root radio
@@ -1352,7 +1049,6 @@ on property:persist.sys.qlogd=0
 service vm_bms /system/bin/vm_bms
     user root
     group root
-    disabled
 
 service msm_irqbalance /system/bin/msm_irqbalance -f /system/vendor/etc/msm_irqbalance.conf
    class core
@@ -1376,7 +1072,6 @@ service mocana-startup /system/bin/sh /system/etc/init.mocana.sh
     disabled
     oneshot
 
-# HTC WLAN
 service p2p_supplicant /system/bin/wpa_supplicant \
     -iwlan0 -Dnl80211 -c/data/misc/wifi/wpa_supplicant.conf \
     -I/system/etc/wifi/p2p_supplicant_overlay.conf \
@@ -1397,56 +1092,21 @@ service wpa_supplicant /system/bin/wpa_supplicant \
     disabled
     oneshot
 
-# HTC CIR firmware update - BEGIN
-service cir_fw_update /system/bin/cir_fw_update -u cir.img
-    class main
-    user root
-    group root
-    oneshot
-# HTC CIR firmware update - END
-
-# HTC Embedded Log +++
-service htc_ebdlogd /system/bin/htc_ebdlogd -s -k -P 7
-    user root
-    disabled
-    oneshot
-    ioprio idle 0
-
-service htc_ebdlogd_rel /system/bin/htc_ebdlogd -s -k
-    user root
-    disabled
-    oneshot
-    ioprio idle 0
-
-on property:ro.build.tags=test-keys
-    start htc_ebdlogd
-
-on property:ro.build.tags=release-keys
-    start htc_ebdlogd_rel
-# HTC Embedded Log ---
-
-# HTC sensor_hub - BEGIN
-service shub_dbg /system/bin/shub_dbg
-    class main
-    user system
-    group system
-# HTC sensor_hub - END
-
 #start camera server as daemon
 service qcamerasvr /system/bin/mm-qcamera-daemon
     class late_start
     user camera
     group camera system inet input graphics
 
-#service qseecomd /system/bin/qseecomd
-#   class core
-#   user root
-#   group root
+service qseecomd /system/bin/qseecomd
+    class core
+    user root
+    group root
 
 service perfd /system/bin/perfd
-   class main
-   user root
-   disabled
+    class main
+    user root
+    disabled
 
 service per_mgr /system/bin/pm-service
     class core
@@ -1556,20 +1216,6 @@ service memlock /system/bin/memlock
     class main
     user root
 
-on property:init.svc.thermal-engine=stopped
-    write /sys/power/pnpmgr/thermal/thermal_final_bcpu 999999999
-    write /sys/power/pnpmgr/thermal/thermal_final_lcpu 999999999
-    write /sys/power/pnpmgr/thermal/thermal_final_gpu 999999999
-    write /sys/power/pnpmgr/thermal/thermal_batt 0
-    write /sys/power/pnpmgr/cluster/big/cpu0/thermal_freq 999999999
-    write /sys/power/pnpmgr/cluster/big/cpu1/thermal_freq 999999999
-    write /sys/power/pnpmgr/cluster/big/cpu2/thermal_freq 999999999
-    write /sys/power/pnpmgr/cluster/big/cpu3/thermal_freq 999999999
-    write /sys/power/pnpmgr/cluster/little/cpu0/thermal_freq 999999999
-    write /sys/power/pnpmgr/cluster/little/cpu1/thermal_freq 999999999
-    write /sys/power/pnpmgr/cluster/little/cpu2/thermal_freq 999999999
-    write /sys/power/pnpmgr/cluster/little/cpu3/thermal_freq 999999999
-
 on property:init.svc.bootanim=running
     write /sys/module/lpm_levels/system/a53/cpu0/retention/idle_enabled 0
     write /sys/module/lpm_levels/system/a53/cpu1/retention/idle_enabled 0
@@ -1577,8 +1223,6 @@ on property:init.svc.bootanim=running
     write /sys/module/lpm_levels/system/a53/cpu3/retention/idle_enabled 0
     write /sys/module/lpm_levels/system/a57/cpu4/retention/idle_enabled 0
     write /sys/module/lpm_levels/system/a57/cpu5/retention/idle_enabled 0
-    write /sys/module/lpm_levels/system/a57/cpu6/retention/idle_enabled 0
-    write /sys/module/lpm_levels/system/a57/cpu7/retention/idle_enabled 0
     write /sys/module/lpm_levels/system/a57/a57-l2-retention/idle_enabled 0
     write /sys/module/lpm_levels/system/a53/a53-l2-retention/idle_enabled 0
     write /sys/module/lpm_levels/parameters/sleep_disabled 0
@@ -1594,4 +1238,28 @@ service zchgd_offmode /system/bin/zchgd -pseudooffmode -autostop -poffmodewarn
     group root graphics
     disabled
 
+service bdaddr_loader /system/bin/bdaddr_loader
+    user root
+    group bluetooth net_bt_admin misc net_bt_stack
+    disabled
+    oneshot
 
+on property:persist.service.criticaltemp=1
+   write /sys/kernel/debug/spmi/spmi-0/address 0x00867
+   write /sys/kernel/debug/spmi/spmi-0/data 0
+   write /sys/kernel/debug/spmi/spmi-0/address 0x20867
+   write /sys/kernel/debug/spmi/spmi-0/data 0
+   write /sys/module/msm_thermal/parameters/reset_temp 170
+   write /sys/devices/virtual/thermal/thermal_zone2/ctrl_crit_temp 1
+   write /sys/devices/virtual/thermal/thermal_zone3/ctrl_crit_temp 1
+   write /sys/devices/virtual/thermal/thermal_zone4/ctrl_crit_temp 1
+   write /sys/devices/virtual/thermal/thermal_zone5/ctrl_crit_temp 1
+   write /sys/devices/virtual/thermal/thermal_zone6/ctrl_crit_temp 1
+   write /sys/devices/virtual/thermal/thermal_zone7/ctrl_crit_temp 1
+   write /sys/devices/virtual/thermal/thermal_zone8/ctrl_crit_temp 1
+   write /sys/devices/virtual/thermal/thermal_zone9/ctrl_crit_temp 1
+   write /sys/devices/virtual/thermal/thermal_zone10/ctrl_crit_temp 1
+   write /sys/devices/virtual/thermal/thermal_zone11/ctrl_crit_temp 1
+   write /sys/devices/virtual/thermal/thermal_zone12/ctrl_crit_temp 1
+   write /sys/devices/virtual/thermal/thermal_zone13/ctrl_crit_temp 1
+   write /sys/devices/virtual/thermal/thermal_zone14/ctrl_crit_temp 1

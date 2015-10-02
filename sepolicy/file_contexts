@@ -1,8 +1,0 @@
-/system/bin/cir_fw_update                                               u:object_r:cir_fw_update_exec:s0
-
-/dev/ttyHSL2			                                                u:object_r:cir_device:s0
-
-/data/cam_socket1		                                                u:object_r:camera_socket:s0
-/data/cam_socket2		                                                u:object_r:camera_socket:s0
-
-/sys/devices/virtual/graphics/fb0/rgb			                        u:object_r:display_sysfs:s0

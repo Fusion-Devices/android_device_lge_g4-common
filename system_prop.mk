@@ -1,5 +1,5 @@
 #
-# System Properties for HTC One M9 (hima)
+# System Properties for G4
 #
 
 # MTP and USB-OTG
@@ -7,43 +7,29 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.sys.usb.config=mtp \
     persist.sys.isUsbOtgEnabled=true
 
-# HTC RIL
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-	rild.libpath=/system/lib64/libhtc_rilhook.so
-
-# QC RIL (disabled for now, using prebuilt libril)
-#PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-#	rild.libpath=/vendor/lib64/libril-qc-qmi-1.so
-
 # Audio
 PRODUCT_PROPERTY_OVERRIDES += \
-    mm.enable.smoothstreaming=true \
-    mm.enable.qcom_parser=3314291 \
-    audio.offload.buffer.size.kb=1024 \
-    av.offload.enable=true \
-    av.streaming.offload.enable=true \
-    use.voice.path.for.pcm.voip=true \
-    audio.offload.multiple.enabled=true \
+    audio.offload.buffer.size.kb=32 \
     audio.offload.gapless.enabled=true \
-    media.aac_51_output_enabled=true \
+    audio.offload.multiple.enabled=false \
     audio.offload.pcm.16bit.enable=false \
-    audio.offload.pcm.24bit.enable=true
-
-# fluencetype can be "fluence" or "fluencepro" or "none"
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.qc.sdk.audio.fluencetype=fluence \
-    ro.qc.sdk.audio.ssr=false
-
-PRODUCT_PROPERTY_OVERRIDES += \
+    audio.offload.pcm.24bit.enable=true \
+    audio.offload.pcm.enable=true \
+    av.offload.enable=false \
+    av.streaming.offload.enable=false \
     persist.audio.fluence.voicecall=true \
     persist.audio.fluence.voicerec=false \
-    persist.audio.fluence.speaker=true
+    persist.audio.fluence.speaker=true \
+    ro.qc.sdk.audio.fluencetype=fluence \
+    ro.qc.sdk.audio.ssr=false \
+    tunnel.audio.encode=false \
+    use.voice.path.for.pcm.voip=false
 
-# System props for Dolby
-PRODUCT_PROPERTY_OVERRIDES += \
-    dmid=-1286820014 \
-    audio.ds1.metainfo.key=273
 
+# Camera
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    camera.disable_zsl_mode=1
+        
 # Display
 #
 # OpenGLES:
@@ -54,7 +40,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.hwc.mdpcomp.enable=true \
     ro.opengles.version=196608 \
-    ro.sf.lcd_density=480
+    ro.sf.lcd_density=560
 
 # GPS
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -84,8 +70,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Radio
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.radio.apm_sim_not_pwdn=1
-#    persist.radio.add_power_save=1
+    rild.libpath=/vendor/lib64/libril-qc-qmi-1.so \
+    persist.radio.apm_sim_not_pwdn=1 \
+    persist.radio.add_power_save=1 
 
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.data.netmgrd.qos.enable=false \
@@ -93,7 +80,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Recovery
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.cwm.forbid_format=/boot,/firmware,/persist
+    ro.cwm.forbid_format=/boot,/firmware,/mpt,/persist,/persist-lg,/sns
 
 # Sensor debugging
 # Valid settings (and presumably what they mean):
